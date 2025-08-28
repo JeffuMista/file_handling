@@ -1,32 +1,38 @@
 #Write a Python program to create a PDF file containing a list of names.
 file = open("names.pdf", "w")
 file.write("James, " "John, " "Paul, " "George, " "Ringo\n")
+file.close()
 
 #append names to the file
 file = open("names.pdf", "a")
 file.write("Yoko, " "Linda, " "Cynthia\n")    
 file.write("These are some power couples: " "John and Yoko, " "Paul and Linda, " "George and Cynthia\n")
 file.write("These are some solo artists: " "John, " "Paul, " "George, " "Ringo, " "Yoko, " "Linda, " "Cynthia\n")
+file.close()
 
 #Read a single line from the file
 file = open("names.pdf", "r")
 line = file.readline()
 print(line)
+file.close()
 
 #Read all lines from the file - shows as an array
 file = open("names.pdf", "r")
 lines = file.readlines()
 print(lines)
+file.close()
 
 #Read a specific line from the file
 file = open("names.pdf", "r")
 lines = file.readlines()
 print(lines[2]) #prints the third line
+file.close()
 
 #Read the entire file
 file = open("names.pdf", "r")
 content = file.read()
 print(content)
+file.close()
 
 #ERROR HANDLING - try and except blocks if the file does not exist
 try:
@@ -59,6 +65,7 @@ input_file.write("My mission is to save the world from evil villains.\n")
 input_file.write("I have a license to kill and I always ensure I do a thorough job.\n")
 input_file.write("In my line of work, discretion is key, and I always stay one ahead of my enemies. They never see me coming\n")
 input_file.write("I always have a gadget or two up my sleeve, and I never leave home without my trusty Walther PPK.\n")
+input_file.close()
 
 
 #Read from input.txt, process the text, and write to output.txt
@@ -69,6 +76,7 @@ word_count = len(content.split()) #splits the content into words based on spaces
 print(f"Word Count: {word_count}")  
 uppercase_content = content.upper() #converts the content to uppercase
 print(uppercase_content)
+input_file.close()
 
 #Write to output.txt
 output_file = open("output.txt", "w")
@@ -81,3 +89,4 @@ output_file = open("output.txt", "r")
 content_two = output_file.read()  #reads the content of output.txt
 print(f"This is the newly created file output.txt: \n{content_two}")
 print("output.txt has been created successfully with the processed upper-case text and word count from input.txt.")
+output_file.close()
